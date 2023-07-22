@@ -16,3 +16,21 @@
 // 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
 
 // inserimento variabili nel todo
+
+const { createApp } = Vue
+
+const app = createApp({
+    data() {
+        return {
+            todoList: [{
+                id: 0,
+                text: "Primo Task",
+                done: false,
+            }]   
+        }
+    },
+    methods: {
+
+    }
+
+}).mount("#app")
