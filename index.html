@@ -30,8 +30,12 @@
             <button class="btn btn-success my-3" @click="addTask">Aggiungi</button>
             <div class="card border-0 rounded-5">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" v-for="listTask in todoList">
+                    <li class="list-group-item d-flex list-task" v-for="listTask in todoList">
+                        <div class="flex-grow-1">
                         {{ listTask.text }}
+                        </div>
+
+                        <div class="btn btn-link text-danger delete-task"><i class="fa-solid fa-square-xmark"></i></div>
                     </li>
                 </ul>
             </div>
