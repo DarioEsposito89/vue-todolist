@@ -22,6 +22,12 @@ const { createApp } = Vue
 const app = createApp({
     data() {
         return {
+            inputTask: {
+                id:"",
+                tesxt: "",
+                done: "",
+            },
+
             todoList: [{
                 id: 0,
                 text: "Primo Task",
@@ -30,7 +36,11 @@ const app = createApp({
         }
     },
     methods: {
+        addTask () {
+            const taskClone = {...this.inputTask}
 
+            this.todoList.push(taskClone)
+        }
     }
 
 }).mount("#app")

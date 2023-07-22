@@ -16,7 +16,9 @@
     <div id="app">
         <div class="container">
             <h1 class="text-white">TO DO LIST</h1>
-            <input type="text" class="form-control form-control-lg" placeholder="scrivi qualcosa da fare">
+            <input type="text" class="form-control form-control-lg" 
+            placeholder="scrivi qualcosa da fare"
+            v-model="inputTask.text" >
             <div class="input-group my-5 col-5">
                 <div class="input-group-text">
                     <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
@@ -24,7 +26,7 @@
                 <input type="text" class="form-control" aria-label="Text input with checkbox">
             </div>
 
-            <button class="btn btn-success my-3">Aggiungi</button>
+            <button class="btn btn-success my-3" @click="addTask">Aggiungi</button>
             <div class="card border-0 rounded-5">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" v-for="listTask in todoList">
