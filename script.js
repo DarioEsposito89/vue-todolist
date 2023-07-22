@@ -50,6 +50,8 @@ const app = createApp({
 
             let deleteTaskId = this.todoList.findIndex((listTask)=> listTask.id === taskId);    
             console.log(deleteTaskId);
+
+            this.todoList.splice(deleteTaskId,1)
         }
     }
 
