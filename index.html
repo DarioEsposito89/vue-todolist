@@ -18,7 +18,8 @@
             <h1 class="text-white">TO DO LIST</h1>
             <input type="text" class="form-control form-control-lg" 
             placeholder="scrivi qualcosa da fare"
-            v-model="inputTask.text" >
+            v-model="inputTask.text"
+            @keyup.enter="addTask">
             <div class="input-group my-5 col-5">
                 <div class="input-group-text">
                     <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
