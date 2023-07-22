@@ -22,14 +22,16 @@ const { createApp } = Vue
 const app = createApp({
     data() {
         return {
+            lastId:2,
+
             inputTask: {
                 id:"",
-                tesxt: "",
+                text: "",
                 done: "",
             },
 
             todoList: [{
-                id: 0,
+                id: 1,
                 text: "Primo Task",
                 done: false,
             }]   
@@ -37,9 +39,17 @@ const app = createApp({
     },
     methods: {
         addTask () {
-            const taskClone = {...this.inputTask}
+            const taskClone = {...this.inputTask, id: ++this.lastId}
+            
+            console.log(taskClone)
 
             this.todoList.push(taskClone)
+        },
+        deleteTask (taskId) {
+            console.log(taskId);
+
+            let deleteTaskId = this.todoList.findIndex((listTask)=> listTask.id === taskId);    
+            console.log(deleteTaskId);
         }
     }
 
