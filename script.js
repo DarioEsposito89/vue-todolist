@@ -22,7 +22,7 @@ const { createApp } = Vue
 const app = createApp({
     data() {
         return {
-            lastId:2,
+            lastId:1,
 
             inputTask: {
                 id:"",
@@ -46,12 +46,23 @@ const app = createApp({
             this.todoList.push(taskClone)
         },
         deleteTask (taskId) {
-            console.log(taskId);
 
             let deleteTaskId = this.todoList.findIndex((listTask)=> listTask.id === taskId);    
             console.log(deleteTaskId);
 
-            this.todoList.splice(deleteTaskId,1)
+            this.todoList.splice(deleteTaskId, 1)
+        },
+        barTask(taskId) {
+            let barTaskId = this.todoList.findIndex((listTask)=> listTask.id === taskId);
+
+            this.listTask === true
+        },
+        changeDone(singleElement) {
+            if ( singleElement.done === false) {
+                singleElement.done = true
+            } else {
+                singleElement.done = false
+            }
         }
     }
 

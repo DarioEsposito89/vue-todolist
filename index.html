@@ -20,13 +20,7 @@
             placeholder="scrivi qualcosa da fare"
             v-model="inputTask.text"
             @keyup.enter="addTask">
-            <div class="input-group my-5 col-5">
-                <div class="input-group-text">
-                    <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
-                </div>
-                <input type="text" class="form-control" aria-label="Text input with checkbox">
-            </div>
-
+            
             <button class="btn btn-success my-3" @click="addTask">Aggiungi</button>
             <div class="card border-0 rounded-5">
                 <ul class="list-group list-group-flush">
@@ -34,8 +28,12 @@
                         <div class="flex-grow-1">
                         {{ listTask.text }}
                         </div>
-
-                        <div class="btn btn-link text-danger delete-task"><i class="fa-solid fa-square-xmark"></i></div>
+                        <div class="btn btn-link text-success bar-task"
+                        @click="changeDone (listTask.done)">
+                        <i class="fa-solid fa-square-check"></i></div>
+                        <div class="btn btn-link text-danger delete-task"
+                        @click="deleteTask (listTask.id)">
+                        <i class="fa-solid fa-square-xmark"></i></div>
                     </li>
                 </ul>
             </div>

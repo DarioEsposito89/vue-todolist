@@ -9,3 +9,11 @@
 .list-task:hover .delete-task {
     opacity: 1;
 }
+
+.list-task .bar-task {
+    opacity: 0;
+} 
+
+.list-task:hover .bar-task {
+    opacity: 1;
+}
